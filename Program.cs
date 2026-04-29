@@ -208,7 +208,7 @@ namespace DarkHallow
                         }
                     }
 
-                    // TRAIL (UPDATED LOVE RIDDLE VERSION)
+                    // TRAIL 
                     if (fieldAdventure == "trail")
                     {
                         Console.WriteLine("\nYou follow the trail along the hillside.");
