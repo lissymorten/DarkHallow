@@ -21,6 +21,8 @@ namespace DarkHallow
             // Forest entry
             while (userInput == "forest")
             {
+                Console.WriteLine("\nYou step beneath the canopy. The forest hums with quiet life.");
+
                 string forestAdventure;
                 do
                 {
@@ -31,6 +33,8 @@ namespace DarkHallow
                 // Right forest path 
                 if (forestAdventure == "right")
                 {
+                    Console.WriteLine("\nThe forest grows denser as you walk. You see an opening in the roots of a gigantic tree.");
+
                     string forestAction;
                     do
                     {
@@ -55,7 +59,7 @@ namespace DarkHallow
 
                     if (enterOpening == "no")
                     {
-                        Console.WriteLine("\n\nIt's getting dark. You set up camp for the night.");
+                        Console.WriteLine("\nIt's getting dark. You set up camp for the night.");
                         break;
                     }
 
@@ -82,14 +86,15 @@ namespace DarkHallow
                         }
                         else
                         {
-                            Console.WriteLine("\n\nYou choke and die.");
+                            Console.WriteLine("\nYou choke and die.");
                             break;
                         }
-
                     }
+
                     if (approachCrown == "no")
                     {
-                        Console.WriteLine("\n\nYou leave the opening and set up camp outside the tree");
+                        Console.WriteLine("\nYou resist the pull of the crown and leave the chamber.");
+                        Console.WriteLine("You return to the forest and set up camp outside the tree.");
                         break;
                     }
                 }
@@ -97,7 +102,8 @@ namespace DarkHallow
                 // Left forest path 
                 if (forestAdventure == "left")
                 {
-                    // Dryad encounter
+                    Console.WriteLine("\nThe air grows lighter. You hear water nearby.");
+
                     string dryadConvo;
                     do
                     {
@@ -109,24 +115,25 @@ namespace DarkHallow
                     // Dryad choice
                     if (dryadConvo == "yes")
                     {
-                        Console.WriteLine("\nThe druid speaks:\n");
+                        Console.WriteLine("\nThe dryad turns to you and speaks:\n");
                         Console.WriteLine("\"I whisper in the rustling leaves,\nI dance upon the rolling seas.\nI paint the sky with dawn’s first light,\nAnd fill the world with sounds of life.\nWhat am I?\"");
                         string dryadRiddle = Console.ReadLine().ToLower();
 
                         if (dryadRiddle == "nature")
                         {
-                            Console.WriteLine("\n\nThe dryad gives the blessing of the forest.");
+                            Console.WriteLine("\nThe dryad smiles and grants you the blessing of the forest.");
                             break;
                         }
                         else
                         {
-                            Console.WriteLine("\n\nBranches grow from your skin and you turn into a tree.");
+                            Console.WriteLine("\nBranches grow from your skin and you turn into a tree.");
                             break;
                         }
                     }
 
                     if (dryadConvo == "no")
                     {
+                        Console.WriteLine("\nYou quietly pass by, choosing not to disturb the spirit.");
                         Console.WriteLine("You continue down the path until you tire and set up camp.");
                         break;
                     }
@@ -136,6 +143,8 @@ namespace DarkHallow
             // Field entry
             while (userInput == "field")
             {
+                Console.WriteLine("\nYou walk into the open field. The wind brushes against the tall grass.");
+
                 string fieldAdventure;
                 do
                 {
@@ -146,6 +155,8 @@ namespace DarkHallow
                 // Building choice
                 if (fieldAdventure == "building")
                 {
+                    Console.WriteLine("\nThe structure looms ahead, old and forgotten.");
+
                     string mausoleumAdventure;
                     do
                     {
@@ -153,15 +164,13 @@ namespace DarkHallow
                         mausoleumAdventure = Console.ReadLine().ToLower();
                     } while (mausoleumAdventure != "yes" && mausoleumAdventure != "no");
 
-                    if (mausoleumAdventure == "yes")
-                    {
-                        Console.WriteLine("You enter the mausoleum. There is a large stone chest in the middle of the room.");
-                    }
                     if (mausoleumAdventure == "no")
                     {
-                        Console.WriteLine("\n\nIt's getting dark. You decide to lay in the grass and stare up at the sky.");
+                        Console.WriteLine("\nIt's getting dark. You decide to lay in the grass and stare up at the sky.");
                         break;
                     }
+
+                    Console.WriteLine("\nYou enter the mausoleum. There is a large stone chest in the middle of the room.");
 
                     // Mausoleum chest
                     string openChest;
@@ -177,7 +186,6 @@ namespace DarkHallow
                         Console.WriteLine("\"I am the end of every journey, yet the start of none.\nI take kings and beggars alike, sparing no one.\nYou may fear me or embrace me, but never escape me.\nWhat am I?\"\n");
                         string riddleAnswer = Console.ReadLine().ToLower();
 
-
                         // Mausoleum riddle
                         if (riddleAnswer == "death")
                         {
@@ -186,21 +194,24 @@ namespace DarkHallow
                         }
                         else
                         {
-                            Console.WriteLine("\n\nYou die.");
+                            Console.WriteLine("\nYou die.");
                             break;
                         }
                     }
+
                     if (openChest == "no")
                     {
-                        Console.WriteLine("\n\nYou decide to leave the mausoleum and set up camp for the night");
+                        Console.WriteLine("\nYou decide to leave the mausoleum and set up camp for the night.");
                         break;
                     }
                 }
+
                 // Trail choice
                 if (fieldAdventure == "trail")
                 {
-                    Console.WriteLine("\nYou continue down the path down the side of the hill.");
-                    Console.WriteLine("You don't see anything extraordinary and resume your adventure.");
+                    Console.WriteLine("\nYou follow the trail along the hillside.");
+                    Console.WriteLine("The journey is calm, uneventful... for now.");
+                    Console.WriteLine("As night falls, you decide to rest and continue tomorrow.");
                     break;
                 }
             }
