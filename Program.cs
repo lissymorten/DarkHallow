@@ -208,16 +208,66 @@ namespace DarkHallow
                         }
                     }
 
+                    // TRAIL (UPDATED LOVE RIDDLE VERSION)
                     if (fieldAdventure == "trail")
                     {
                         Console.WriteLine("\nYou follow the trail along the hillside.");
-                        Console.WriteLine("The journey is calm, uneventful... for now.");
-                        Console.WriteLine("As night falls, you decide to rest and continue tomorrow.");
+                        Console.WriteLine("The wind grows colder as the sun begins to fade behind the hills.");
+
+                        Console.WriteLine("\nAfter some time, you notice something half-buried near the path...");
+
+                        string trailObject;
+                        do
+                        {
+                            Console.WriteLine("\nDo you investigate the object or continue walking? INVESTIGATE or CONTINUE");
+                            trailObject = Console.ReadLine().ToLower();
+                        } while (trailObject != "investigate" && trailObject != "continue");
+
+                        if (trailObject == "continue")
+                        {
+                            Console.WriteLine("\nYou choose not to linger.");
+                            Console.WriteLine("The trail eventually fades, and you find a safe place to rest for the night.");
+                            break;
+                        }
+
+                        Console.WriteLine("\nYou kneel beside the object and brush away the dirt.");
+                        Console.WriteLine("It is an old stone lantern, worn but intact.");
+
+                        string lanternChoice;
+                        do
+                        {
+                            Console.WriteLine("\nDo you touch the lantern? YES or NO");
+                            lanternChoice = Console.ReadLine().ToLower();
+                        } while (lanternChoice != "yes" && lanternChoice != "no");
+
+                        if (lanternChoice == "no")
+                        {
+                            Console.WriteLine("\nYou leave the lantern untouched and continue down the trail.");
+                            Console.WriteLine("Eventually, you find a quiet place to rest for the night.");
+                            break;
+                        }
+
+                        Console.WriteLine("\nThe lantern flickers and a voice whispers:");
+                        Console.WriteLine("\"I am born in a glance, grow in silence, and can outlive time itself. What am I?\"");
+
+                        string lanternRiddle = Console.ReadLine().ToLower();
+
+                        if (lanternRiddle == "love")
+                        {
+                            Console.WriteLine("\nThe lantern glows warmly, as if something unseen has awakened.");
+                            Console.WriteLine("The path ahead feels strangely gentle, and you find a safe place to rest for the night.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nThe lantern dims.");
+                            Console.WriteLine("You feel uncertain, but continue on and eventually find a place to rest for the night.");
+                        }
+
                         break;
                     }
                 }
 
-                // ENDING STATE
+                // END STATE
                 Console.WriteLine("\n==============================");
 
                 if (playerDied)
